@@ -1,0 +1,7 @@
+#
+# PageTS for themestory
+#
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:themestory/Configuration/PageTS/RTE.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:themestory/Configuration/PageTS/TCEFORM.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:themestory/Configuration/PageTS/TCEMAIN.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:themestory/Configuration/PageTS/Mod/WebLayout/BackendLayouts.txt">
