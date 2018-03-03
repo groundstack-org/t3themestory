@@ -1,0 +1,59 @@
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/constants.ts">
+
+
+
+
+
+##############################
+#### FLUID STYLED CONTENT ####
+##############################
+styles {
+    templates {
+        layoutRootPath = EXT:t3themestory/Resources/Private/Layouts/ContentElements/
+        partialRootPath = EXT:t3themestory/Resources/Private/Partials/ContentElements/
+        templateRootPath = EXT:t3themestory/Resources/Private/Templates/ContentElements/
+    }
+}
+
+
+############
+### PAGE ###
+############
+page {
+     fluidtemplate {
+        layoutRootPath = EXT:t3themestory/Resources/Private/Layouts/Page/
+        partialRootPath = EXT:t3themestory/Resources/Private/Partials/Page/
+        templateRootPath = EXT:t3themestory/Resources/Private/Templates/Page/
+    }
+    meta {
+        description =
+        author =
+        keywords =
+        viewport = width=device-width, initial-scale=1
+        robots = index,follow
+        apple-mobile-web-app-capable = no
+        compatible = IE=edge
+    }
+    tracking {
+        google {
+            trackingID =
+            anonymizeIp = 1
+        }
+    }
+}
+
+
+##############
+### CONFIG ###
+##############
+config {
+    no_cache = 0
+    removeDefaultJS = 0
+    admPanel = 1
+    prefixLocalAnchors = all
+    headerComment = build by sitepackagebuilder.com
+    sendCacheHeaders = 1
+}

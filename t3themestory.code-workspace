@@ -1,0 +1,18 @@
+{
+    "folders": [
+        {
+            "path": "./../../../"
+        }
+    ],
+    "settings": {
+        "easysass.targetDir": "./typo3conf/ext/t3themestory/Resources/Public/Css/",
+        "easysass.excludeRegex": "/_?[a-x]*[0-9]*.scss$/g",
+        "liveSassCompile.settings.formats": [
+            {
+                "format": "compressed",
+                "extensionName": ".min.css",
+                "savePath": "/typo3conf/ext/t3themestory/Resources/Public/Css/"
+            }
+        ],
+    }
+}

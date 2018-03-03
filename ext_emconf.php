@@ -4,7 +4,7 @@
  * Extension Manager/Repository config file for ext "themestory".
  */
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'themestory',
+    'title' => 't3themestory',
     'description' => '',
     'category' => 'templates',
     'constraints' => [
@@ -18,7 +18,7 @@ $EM_CONF[$_EXTKEY] = [
     ],
     'autoload' => [
         'psr-4' => [
-            'Groundstack\\Themestory\\' => 'Classes'
+            'GroundStack\\T3ThemeStory\\' => 'Classes'
         ],
     ],
     'state' => 'stable',

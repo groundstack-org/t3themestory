@@ -6,7 +6,7 @@ call_user_func(function()
     /**
      * Temporary variables
      */
-    $extensionKey = 'themestory';
+    $extensionKey = 't3themestory';
 
     /**
      * Default TypoScript for Themestory
@@ -14,6 +14,6 @@ call_user_func(function()
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
         $extensionKey,
         'Configuration/TypoScript',
-        'themestory'
+        't3themestory'
     );
 });

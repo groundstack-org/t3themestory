@@ -6,14 +6,14 @@ call_user_func(function()
     /**
      * Temporary variables
      */
-    $extensionKey = 'themestory';
+    $extensionKey = 't3themestory';
 
     /**
      * Default PageTS for Themestory
      */
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
         $extensionKey,
-        'Configuration/PageTS/All.txt',
-        'themestory'
+        'Configuration/PageTS/All.ts',
+        't3themestory'
     );
 });
