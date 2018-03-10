@@ -3,7 +3,6 @@
 ######################
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/setup.ts">
 
-
 ################
 #### HELPER ####
 ################
@@ -13,7 +12,7 @@
 #### CONFIG ####
 ################
 config {
-    absRefPrefix = auto
+    absRefPrefix = {$config.absRefPrefix}
     no_cache = {$config.no_cache}
     uniqueLinkVars = 1
     pageTitleFirst = 1
@@ -75,7 +74,7 @@ config {
 page = PAGE
 page {
     typeNum = 0
-    shortcutIcon = EXT:themestory/Resources/Public/Icons/favicon.ico
+    shortcutIcon = {$page.meta.shortcutIcon}
 
     10 = FLUIDTEMPLATE
     10 {
@@ -127,9 +126,40 @@ page {
         viewport = {$page.meta.viewport}
         robots = {$page.meta.robots}
         apple-mobile-web-app-capable = {$page.meta.apple-mobile-web-app-capable}
-        description = {$page.meta.description}
-        description {
-            override.field = description
+
+        title {
+            noTrimWrap = |{$page.meta.beforeMetaTitle} | {$page.meta.afterMetaTitle}|
+            data = field:title
+            data.override = field:subtitle
+            data.override.if.isTrue.field = subtitle
+        }
+
+        description.field = description
+        description.ifEmpty {
+            stdWrap {
+                cObject = CONTENT
+                cObject {
+                    table = tt_content
+                    select {
+                        orderBy = sorting
+                        where = colPos = 1
+                        languageField = sys_language_uid
+                        max = 2
+                    }
+                    renderObj = COA
+                    renderObj {
+                        10 = TEXT
+                        10 {
+                            doubleBrTag = .
+                            required = 1
+                            field = bodytext
+                            stripHtml = 1
+                            crop = 160 | ...
+                            noTrimWrap = | ||
+                        }
+                    }
+                }
+            }
         }
 
         author = {$page.meta.author}
@@ -158,10 +188,35 @@ page {
             data = TSFE:tmpl|setup|sitetitle
         }
 
-        og:description = {$page.meta.description}
         og:description {
             attribute = property
             field = description
+        }
+        og:description.ifEmpty {
+            stdWrap {
+                cObject = CONTENT
+                cObject {
+                    table = tt_content
+                    select {
+                        orderBy = sorting
+                        where = colPos = 1
+                        languageField = sys_language_uid
+                        max = 2
+                    }
+                    renderObj = COA
+                    renderObj {
+                        10 = TEXT
+                        10 {
+                            doubleBrTag = .
+                            required = 1
+                            field = bodytext
+                            stripHtml = 1
+                            crop = 160 | ...
+                            noTrimWrap = | ||
+                        }
+                    }
+                }
+            }
         }
 
         og:image {
@@ -202,6 +257,14 @@ page {
     variables {
 
     }
+
+    includeCSSLibs >
+    includeCSS >
+    includeJSLibs >
+    includeJS >
+    includeJSFooterlibs >
+    includeJSFooter >
+
 
     includeCSSLibs {
         0010_font_awesome = EXT:t3themestory/Resources/Public/Css/font-awesome.min.css

@@ -3,10 +3,6 @@
 ######################
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/constants.ts">
 
-
-
-
-
 ##############################
 #### FLUID STYLED CONTENT ####
 ##############################
@@ -18,25 +14,30 @@ styles {
     }
 }
 
-
 ############
 ### PAGE ###
 ############
 page {
      fluidtemplate {
-        layoutRootPath = EXT:t3themestory/Resources/Private/Layouts/Page/
-        partialRootPath = EXT:t3themestory/Resources/Private/Partials/Page/
-        templateRootPath = EXT:t3themestory/Resources/Private/Templates/Page/
+        layoutRootPath =
+        partialRootPath =
+        templateRootPath =
     }
+
     meta {
-        description =
+        shortcutIcon = EXT:t3themestory/Resources/Public/Icons/favicon.ico
+
         author =
         keywords =
-        viewport = width=device-width, initial-scale=1
+        viewport = initial-scale=1.0,maximum-scale=2.0,minimum-scale=1.0,user-scalable=yes,width=device-width
         robots = index,follow
         apple-mobile-web-app-capable = no
         compatible = IE=edge
+
+        beforeMetaTitle =
+        afterMetaTitle =
     }
+
     tracking {
         google {
             trackingID =
@@ -44,7 +45,6 @@ page {
         }
     }
 }
-
 
 ##############
 ### CONFIG ###
@@ -54,6 +54,7 @@ config {
     removeDefaultJS = 0
     admPanel = 1
     prefixLocalAnchors = all
-    headerComment = build by sitepackagebuilder.com
+    headerComment =
     sendCacheHeaders = 1
+    absRefPrefix = auto
 }
